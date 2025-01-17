@@ -9,6 +9,7 @@ Repositório do treinamento: Hands On Automatizando WebSite
 - Javascript
 - Node.js
 - Cucumber
+- Gherkin e BDD
 
 ## Rodando
 
