@@ -1,47 +1,25 @@
 /// <reference types="Cypress"/>
-import RegisterPage from "../pages/Register_Page"
+import HomePage from "../pages/Home_Page"
 
-const registers = new RegisterPage
+const home = new HomePage
 
-Given(/^que estejamos na page de Cadastro$/, () => {
-	registers.vititPage()
+Given(/^Que eu acesse a home PHPTravels$/, () => {
+	home.vititPage()
 });
 
-Given(/^inserimos nosso Nome "([^"]*)" e Sobrenome "([^"]*)"$/, (name, surname) => {
-	console.log(name, surname);
-	registers.fillNameAndSurname(name, surname)
+When(/^Eu digitar meus dados de cadastro "([^"]*)", "([^"]*)", "([^"]*)", "([^"]*)", "([^"]*)"$/, (name,surname,email,business_name, whatsapp) => {
+	home.fillPersonalInformation(name, surname, whatsapp)
+	home.fillDataInformation(email, business_name)
 });
 
-Given(/^informamos nosso dados de contato "([^"]*)", "([^"]*)" e "([^"]*)"$/, (address, email, phone) => {
-	console.log(address, email, phone);
-	registers.fillContacs(address, email, phone)
+When(/^resolver a função matemática$/, () => {
+	home.resolveMath()
 });
 
-Given(/^nosso genero como "([^"]*)" e hobbis "([^"]*)"$/, (gender, hobbies) => {
-	console.log(gender, hobbies);
-	registers.selectRadioGender(gender)
-	registers.selectCheckHobbies(hobbies)
+When(/^clicar no botão Submit$/, () => {
+	home.clickBtnSubmit()
 });
 
-Given(/^nossas skill "([^"]*)" e nosso pais "([^"]*)"$/, (skill, country) => {
-	console.log(skill, country);
-	registers.selectSkill(skill)
-	registers.selectCountry(country)
+Then(/^tenho meus dados cadastrados com sucesso com mensagem "([^"]*)"$/, (message) => {
+	cy.contains(message)
 });
-
-When(/^eu selecionar o meu nascimento "([^"]*)", "([^"]*)" e "([^"]*)"$/, (year, month, day) => {
-	console.log(year, month, day);
-	registers.selectBirtDay(year, month, day)
-});
-
-When(/^inserir minhas senhas "([^"]*)" e "([^"]*)"$/, (pass, confirm_pass) => {
-	console.log(pass, confirm_pass);
-	registers.inputPassword(pass, confirm_pass)
-	registers.selectImage()
-});
-
-When(/^clico no botão cadastrar$/, () => {
-	registers.btnSubmit()
-});
-
-Then(/^Tenho meu cadastro realizado com sucesso.$/, () => {});

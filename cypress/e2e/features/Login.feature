@@ -1,13 +1,12 @@
-Feature: Login
-Funcionalidade para realizar variados Logins no sistema PHPTravels
+Feature: Login na aplicação Admin
+Feature para realizar na aplicação de Administradores PHPTravels
 
-Scenario Outline: "<cenarios>"
+   Scenario Outline: Logins variados na aplicação
 
-  Given eu acesso a página home da aplicação
-  When eu inserir meu email "<email>" e minha senha "<senha>"
-  And clicar no botão de entrar
-  Then tenho meu acesso "<mensagem>"
+   Given Que acesse a page home de Login
+   And que eu faço login "<tipo_login>", informando "<email>" e "<senha>"
+   Then Tenho meu Login "<resultado_login>"
 
-  Examples:
-    | cenario            | email                  | senha      | mensagem                |
-    | Login com sucesso  | user@phptravels.com    | demouser   | com sucesso na aplicação|
+   Examples:
+      | tipo_login  | email                | senha     | resultado_login             |
+      | com sucesso | admin@phptravels.com | demoadmin | Login realizado com sucesso |
