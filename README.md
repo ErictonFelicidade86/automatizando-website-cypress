@@ -12,8 +12,9 @@ Repositório do treinamento: Hands On Automatizando WebSite
 - Gherkin e BDD
 
 ## Rodando
+## Faz o clone do repositório
 
-1. Clonar o repositório, instalar as dependências
+1. Instalar as dependências
 ```
 npm install
 ```
