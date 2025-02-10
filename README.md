@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Repositório do treinamento: Hands On Automatizando WebSite
+Repositório do treinamento: Hands On Automatizando WebSite.
 
 ## Stacks
 - Cypress
