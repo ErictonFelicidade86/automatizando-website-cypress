@@ -17,8 +17,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Cypress
-        run: npm install cypress --save-dev
+      - name: Install Cypress and Cucumber Preprocessor
+        run: npm install cypress @badeball/cypress-cucumber-preprocessor --save-dev
 
       - name: Verify Cypress Configuration
         run: ls -la && cat cypress.config.js
