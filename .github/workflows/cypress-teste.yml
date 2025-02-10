@@ -6,15 +6,17 @@ jobs:
   cypress-electron-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4.2.2
 
       - name: Install dependencies
         run: npm install
 
+      - name: Install Cypress
+        run: npm install cypress --save-dev
+
+      - name: Verify Cypress Configuration
+        run: ls -la && cat cypress.config.js
+
       - name: Run E2E tests
         run: npx cypress run
-
-
-      
-
