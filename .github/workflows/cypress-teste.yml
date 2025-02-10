@@ -6,16 +6,17 @@ on:
 
 jobs:
   cypress-electron-tests:
-    runs-on: ubuntu-latest
+    runs-on: cypress/browsers:node-18.16.0-chrome-113.0.5672.126
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
 
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run E2E tests
-        run: yarn cypress run
+        run: npx cypress run
+
 
       
 
